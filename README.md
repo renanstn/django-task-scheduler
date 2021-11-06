@@ -9,7 +9,7 @@ Projeto de estudo de uma aplicação Django que utiliza o django-apscheduler par
 - docker
 - docker-compose
 
-### Subir app django
+### Subir postgres e app django
 
 ```
 docker-compose up
