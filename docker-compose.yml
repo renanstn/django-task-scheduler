@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+
+  database:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+
+  app:
+    build:
+      context: .
+      target: development
+    depends_on:
+      - database
+    volumes:
+      - ./task_scheduler:/app/
+    ports:
+      - "8000:8000"
+    env_file: ./task_scheduler/.env
